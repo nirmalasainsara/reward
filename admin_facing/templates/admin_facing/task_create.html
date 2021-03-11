@@ -1,0 +1,11 @@
+<a href="{% url 'login' %}">login</a><br>
+<a href="{% url 'logout' %}">logout</a><br>
+<a href="{% url 'profile' %}">userprofile</a><br>
+<a href="{% url 'admin_facing:task_claimed' %}">userpoints</a><br>
+
+{% for application in app %}
+{% csrf_token %}
+appname:{{ application.name }}<br>
+points:{{ application.points }}<br>
+<a href="{% url 'admin_facing:task_create' application.id %}">{{ application.name }}</a><br>
+{% endfor %}

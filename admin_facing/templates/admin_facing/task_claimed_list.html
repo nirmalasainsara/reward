@@ -1,0 +1,5 @@
+{% for task in tasks %}
+username:{{ task.user }}<br>
+appnamae:{{task.application.name}}<br>
+points:{{ task.application.points }}<br>
+{% endfor %}

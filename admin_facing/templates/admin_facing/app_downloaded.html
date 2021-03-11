@@ -1,0 +1,6 @@
+{% for app in downloaded_app %}
+{% csrf_token %}
+appname:{{ app.Appname }}<br>
+points:{{ app.Points }}<br>
+downloadedapp:{{ app.app_download }}<br>
+{% endfor %}

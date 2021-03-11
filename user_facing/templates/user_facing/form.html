@@ -1,0 +1,7 @@
+{% block content %}
+<form method="Post" class="post-form">{% csrf_token %}
+    {{ form.as_p }}
+    <input type='submit' value='save' />
+</form>
+Don't have an register? <a href="{% url 'register' %}" target="blank">register</a>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+appname:{{ app.name }}<br>
+points:{{ app.points }}<br>
+<form method="POST" action="{% url 'admin_facing:task_create' app.id %}" enctype="multipart/form-data"
+    class="post-form">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit"> <br>
+</form>
